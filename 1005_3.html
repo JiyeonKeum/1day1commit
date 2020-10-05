@@ -1,0 +1,31 @@
+<html>
+<head>
+</head>
+<body>
+    <div id='timer'>0</div>
+    <button onClick='onStart()'>start!</button>
+    <button onClick='onStop()'>stop!</button>
+    <script>
+        var Timer = 1000;
+        var interval;
+        var initialTime = 0;
+        var timer = document.getElementById('timer');
+        
+        function onStart(){
+            clearInterval(interval);
+            interval = setInterval(function(){
+                intervalTimer();
+            }, Timer);
+        }
+
+        function onStop(){
+            clearInterval(interval);
+        }
+
+        function intervalTimer(){
+            initialTime++;
+            timer.innerHTML = initialTime;
+        }
+    </script>
+</body>
+</html>

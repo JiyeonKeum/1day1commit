@@ -1,0 +1,34 @@
+<html>
+<head></head>
+<body>
+    <div>interval:<span class='time'>0</span></div> 
+    <button onClick='onStart()'>start</button>
+    <button onClick='onStop()'>stop</button>
+    <script>
+        var time = one('.time');
+        var timer = 100;
+        var interval = 0;
+        var repeat;
+        
+        function one(element){
+            return document.querySelector(element);
+        }
+
+        function onStart(){
+            clearInterval(repeat);
+            repeat = setInterval(function(){
+                Timer();
+            }, timer);
+        }
+
+        function Timer(){
+            interval ++;
+            time.innerHTML = interval;
+        }
+
+        function onStop(){ 
+            clearInterval(repeat);
+        }
+    </script>
+</body>
+</html>
