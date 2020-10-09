@@ -1,0 +1,74 @@
+<html>
+<head>
+    <style>
+        *{margin:0; padding: 0;}
+
+        .banners{
+            background: black;
+            position: relative;
+            height: 400px;
+        }
+
+        .banner{
+            width: 100%;
+            height: 400px;
+            background-position: center center;
+            position: absolute;
+            opacity: 0;
+        }
+
+        .active{
+            opacity: 1;
+        }
+
+        .banner:nth-child(1) {
+            background-image: url('https://subway.co.kr/upload/banner/main_PC_1920x440_20201007112359990.jpg');
+        }
+        .banner:nth-child(2) {
+            background-image: url('https://subway.co.kr/upload/banner/main_PC_1920x440_20201006110308039.jpg');
+        }
+        .banner:nth-child(3) {
+            background-image: url('https://subway.co.kr/upload/banner/main_PC_1920x440_20201006110232887.jpg');
+        }
+        .banner:nth-child(4) {
+            background-image: url('https://subway.co.kr/upload/banner/main_PC_1920x440_20201006110138284.jpg');
+        }
+
+    </style>
+</head>
+<body>
+    <div class='banners'>
+        <div class='banner active'></div>
+        <div class='banner'></div>
+        <div class='banner'></div>
+        <div class='banner'></div>
+    </div>
+    <button class='nextBtn'>next</button>
+    <script>
+        var banners = all('.banner');
+        var nextBtn = one('.nextBtn');
+        var index = 0;
+        var length = banners.length;
+
+        function all(element){
+            return document.querySelectorAll(element);
+        }
+
+        function one(element){
+            return document.querySelector(element);
+        }
+
+        function onClick(){
+            console.log(banners);
+
+            banners[index].classList.remove('active');
+            index ++;
+            index = index % length;
+            banners[index].classList.add('active');
+        }
+
+
+        nextBtn.addEventListener('click', onClick);
+    </script>
+</body>
+</html>
