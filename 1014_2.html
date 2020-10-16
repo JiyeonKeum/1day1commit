@@ -1,0 +1,45 @@
+<html>
+<head></head>
+<body>
+    <div class='container'></div>
+    <script src='js/items.js'></script>
+    <script>
+        var container = document.querySelector('.container');
+        
+        var params = {};
+        
+        init();
+        
+        function init(){
+            var pageUrl = window.location.search.substring(1);
+            console.log(pageUrl);
+            var _params = pageUrl.split('&');
+            var row;
+            
+            _params.forEach((element, idx) =>{
+                row = element.split('=');
+                params[row[0]] = row[1];
+            });
+        }
+
+        var productId = getKey('productId') * 1;
+        const item = pdt.filter(item => item.id === productId)[0];
+
+        function getKey(key){
+            return params[key];
+        }
+
+
+        container.innerHTML = `
+        <div class='item'>
+            <div>
+                <img src="img2/${item.src}" class="img">
+            </div>
+            <div class='name'>${item.name}</div>
+            <div class='price'>${item.price}</div>
+        </div>
+        `;
+
+    </script>
+</body>
+</html>

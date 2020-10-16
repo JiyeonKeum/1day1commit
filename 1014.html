@@ -1,0 +1,76 @@
+<html>
+<head>
+    <style>
+        *{margin: 0; padding: 0}
+
+        #container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            width: 800px;
+            margin: 50px auto;
+        }
+
+        #container .item{
+            box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+        }
+
+        #container .item img{
+            width: 100%;
+        }
+
+        #container .item .info .name{
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+            line-height: 32px;
+        }
+
+        #container .item .info .price{
+            font-size: 17px;
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>장바구니: <b id='count'>0</b></h1>
+    </header>
+    <section id='container'></section>
+    <script src='js/items.js'></script>
+    <script>
+        var container = one('#container');
+        var text = '', html = '';
+        
+        print();
+        
+        function one(element){
+            return document.querySelector(element);
+        }
+
+        function print(){
+            pdt.forEach((element, item) =>{
+                text =`
+                <div class='item'>
+                    <a href='1014_2.html?productId=${element.id}&price=${element.price}'>
+                        <div class='img'>
+                            <img src = 'img2/${element.src}'>
+                        </div>
+                    </a>
+                    <div class='info'>
+                        <div class='name'>${element.name}</div> 
+                        <div class='price'>${element.price}</div>
+                    </div>
+                </div>
+                `;
+
+                html += text;
+            });
+        }
+
+        container.innerHTML  = html;
+
+
+    </script>
+</body>
+</html>

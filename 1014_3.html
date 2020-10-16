@@ -1,0 +1,44 @@
+<html>
+<head></head>
+<body>
+    <div>
+        <h1>장바구니: <b class='cart'>0</b></h1>
+    </div>
+    <div class='container'></div>
+    <script src='js/items.js'></script>
+    <script>
+        var container = document.querySelector('.container');
+        var txt ='', html ='';
+
+        print();
+
+        function print(){
+            pdt.forEach((element, item) => {
+                txt = `
+            <div class='item'>
+                <a href='1014_4.html?productId=${element.id}&price=${element.price}'>
+                <div class='img'>
+                    <img src='img2/${element.src}'>
+                </div>
+                </a>
+                <div class='name'>${element.name}</div>
+                <div class='price'>
+                    <span>${element.price}</span>
+                    ${(element.price === element.event) ? '' : getEvent(element.price, element.event)}
+                </div>
+            </div>
+            `;
+
+            html += txt;
+            });
+        }
+        container.innerHTML = html;
+
+        function getEvent(price, event){
+            var eventPercent = Math.ceil((price / event) * 100 - 100);
+
+            return eventPercent + '%';
+        }
+    </script>
+</body>
+</html>
