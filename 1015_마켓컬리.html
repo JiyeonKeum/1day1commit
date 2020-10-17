@@ -33,6 +33,10 @@
         print();
 
         function print(){
+            var localCart = localStorage.getItem('cart');
+            cart = localCart ? localCart.split(',').map(item => item * 1) : [];
+            count.innerHTML = cart.length;
+            
             pdt.forEach((element, idx) =>{
                 txt = `
                 <div class='item'>
@@ -69,6 +73,8 @@
                 cart.push(_item);
                 console.log(cart);
                 count.innerHTML = cart.length;
+                var cartString = cart.join();
+                localStorage.setItem('cart', cartString);
             }
         }
     </script>
