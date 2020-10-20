@@ -1,0 +1,37 @@
+<html>
+<head>
+    <style>
+        *{
+            background: blue;
+        }
+        .container{
+            width: 800px;
+            background: white;
+            overflow: hidden;
+            margin: 50px auto;
+            box-sizing: border-box;
+            padding: 20px 50px;
+        }
+
+        .box{
+            background: gray;
+            width: calc((100% - 20px * 2) / 3);
+            height: 200px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .box:nth-child(3){
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='box'></div>
+        <div class='box'></div>
+        <div class='box'></div>
+    </div>
+    <script></script>
+</body>
+</html>
