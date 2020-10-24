@@ -1,0 +1,115 @@
+<html>
+<head>
+    <style>
+        .container{
+            width: 300px; 
+            height: 200px;
+            border: 1px solid;
+            margin: 100px auto;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box{
+            float: left;
+            height: 100%;
+            width: 100%;
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+            left: 100%;
+            bottom: 0;
+        }
+
+        .box:nth-child(1){
+            background: red;
+        }
+        .box:nth-child(2){
+            background: orange;
+        }
+        .box:nth-child(3){
+            background: yellow;
+        }
+        .box:nth-child(4){
+            background: green;
+        }
+        .box:nth-child(5){
+            background: blue;
+        }
+        
+        .btns{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='box'>1</div>
+        <div class='box'>2</div>
+        <div class='box'>3</div>
+        <div class='box'>4</div>
+        <div class='box'>5</div>
+    </div>
+    <div class='btns'>
+        <button id='previous'>prev</button>
+        <button id='next'>next</button>
+    </div>
+    <script>
+        var boxes = all('.box');
+        var prev = one('#previous');
+        var next = one('#next');
+
+        var index = 0;
+        var stanby = 4;
+        
+        init();
+
+        function init(){
+            boxes[index].style.left = '0%';
+            boxes[stanby].style.left = '-100%';
+        }
+
+        function onPrev(){
+                index = index % 5;
+                boxes[index].style.cssText = 'left: 100%; transition: .5s';
+                index --;
+                if(index === -1){
+                    index = 4;
+                }
+                stanby = index -1;
+                if(stanby === -1){
+                    stanby = 4;
+                }
+                index = index % 5;
+                boxes[index].style.cssText = 'left: 0%; transition: .5s';
+                stanby = stanby % 5;
+                boxes[stanby].style.cssText = 'left: -100%;';
+        }
+
+        function onNext(){
+                index = index % 5;
+                boxes[index].style.cssText = 'left: -100%; transition: .5s';
+                index ++;
+                index = index % 5;
+                boxes[index].style.cssText = 'left: 0%; transition: .5s';
+                stanby = index + 1;
+                stanby = stanby % 5;
+                boxes[stanby].style.cssText = 'left: 100%;';
+        }
+
+        function all(element){
+            return document.querySelectorAll(element);
+        }
+
+        function one(element){
+            return document.querySelector(element);
+        }
+
+        prev.addEventListener('click', onPrev);
+        next.addEventListener('click', onNext);
+    </script>
+</body>
+</html>
