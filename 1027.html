@@ -1,0 +1,39 @@
+<html>
+<head>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background: olive;
+        }
+        #contents{
+            font-size: 100px;
+            line-height: 200px;
+            color: white;
+            text-align: center;
+        }
+
+        .box:hover{
+            background: blue;
+        }
+
+        .box:active{
+            background: red;
+        }
+
+        .box:hover > #contents{
+            color: black;
+        }
+
+        .box:active > #contents{
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class='box'><span id='contents'>BOX</span></div>
+    <script></script>
+</body>
+</html>

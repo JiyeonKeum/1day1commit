@@ -1,0 +1,98 @@
+<html>
+<head>
+    <style>
+        *{margin: 0; padding: 0;}
+        .btns{
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .container{
+            width: 300px;
+            float: right;
+        }
+        .btn{
+            width: calc((100% - 10px * 2) / 3);
+            height: 50px;
+            background: gray;
+            margin-right: 10px;
+            float: left;
+        }
+        .btn:nth-child(3){
+            margin-right: 0;
+        }
+
+        .logoContainer{
+            margin-top: 150px;
+            box-sizing: border-box;
+        }
+        #logo{
+            font-size: 80px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .section{
+            margin-top: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+            
+        }
+        .section1{
+            width: 500px;
+            margin: 0 auto;
+        }
+        #search{
+            width: 100%;
+            height: 20px;
+            border: 1px solid;
+            border-radius: 3px;   
+        }
+        .section2{
+            width: 500px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        .box{
+            width: calc((100% - 10px * 4) / 5);
+            height: 100px;
+            background: gray;
+            float: left;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        .box:nth-child(5n){
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class='btns'>
+        <div class='container'>
+            <div class='btn'></div>
+            <div class='btn'></div>
+            <div class='btn'></div>
+        </div>
+    </div>
+    <div class='logoContainer'>
+        <div id='logo'>google</div>
+    </div>
+    <div class='section'>
+        <div class='section1'>
+            <div id='search'></div>
+        </div>
+        <div class='section2'>
+            <div class='box'></div>
+            <div class='box'></div>
+            <div class='box'></div>
+            <div class='box'></div>
+            <div class='box'></div>
+            <div class='box'></div>
+            <div class='box'></div>
+            <div class='box'></div>
+            <div class='box'></div>
+            <div class='box'></div>
+        </div>
+    </div>
+    <script></script>
+</body>
+</html>
