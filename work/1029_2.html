@@ -1,0 +1,43 @@
+<html>
+<head>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+
+        .container{
+            position: relative;
+            /* border: 1px solid; */
+            /* overflow: hidden; */
+            height: 440px;
+            width: 100vh;
+        }
+        .img{
+            position: absolute;
+            width: 100%;
+            height: 440px;
+            left: 0;
+            top: 0;
+            position: center center;
+        }
+        .gray{
+            position: absolute;
+            background: gray;
+            width: 100%;
+            height: 440px;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+        .img:hover + .gray{
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src='https://subway.co.kr/upload/banner/main_PC_1920x440_20201006110138284.jpg' class='img'>
+        <div class="gray"></div>
+    </div>
+    <script></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+<body>
+    <script>
+        function solution(numbers) {
+            var answer = '';
+            var new_num;
+            var new_arr = [];
+            for(var i = 0; i < numbers.length; i++){
+                if(numbers[i] > 100){
+                    new_num = parseInt(numbers[i] / 100);
+                }
+                else if(numbers[i] > 10){
+                    new_num = parseInt(numbers[i] / 10);
+                }
+                else{
+                    new_num = numbers[i];
+                }
+                new_arr.push(new_num);
+            }
+            new_arr.sort((a, b) => b - a);
+
+            console.log(new_arr);
+
+            return answer;
+        }
+
+        console.log(solution([673, 102, 2]));
+    </script>
+</body>
+</html>

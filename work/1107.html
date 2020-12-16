@@ -1,0 +1,15 @@
+<html>
+<body>
+    <div id="count"></div>
+        <button onclick="setNumber(0)">0</button>
+        <button onclick="setNumber(10)">10</button>
+        <button onclick="setNumber(100)">100</button>
+    <script>
+        let count = document.getElementById("count");
+
+        function setNumber(num){
+            count.innerHTML = num;
+        }
+    </script>
+</body>
+</html>

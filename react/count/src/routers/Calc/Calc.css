@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.calcInner{
+    width: 1100px;
+    height: 500px;
+    margin: 0 auto;
+    background: lightgray;
+    padding: 80px;
+}
+
+.count{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.input{
+    height: 30px;
+    width: 200px;
+    padding: 2px;
+}
+
+.btnContainer{
+    height: 30px;
+}
+
+.increase{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+}
+.decrease{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.btn{
+    width: 60px;
+    height: 30px;
+}
+
