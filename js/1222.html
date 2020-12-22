@@ -1,0 +1,26 @@
+<html>
+<head></head>
+<body>
+    <script>
+        function solution(participant, completion) {
+            var answer = '';
+
+            for(var i = 0; i < participant.length; i++){
+
+                if(completion.indexOf(participant[i]) === -1){
+                    answer = participant[i];
+                    break;
+                }
+
+                else{
+                    var result = completion.indexOf(participant[i]);
+                    completion.splice(result, 1);
+                }
+            }
+            return answer;
+        }
+
+        console.log(solution(["leo", "kiki", "eden"], ["eden", "kiki"]));
+    </script>
+</body>
+</html>
