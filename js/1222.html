@@ -2,25 +2,56 @@
 <head></head>
 <body>
     <script>
-        function solution(participant, completion) {
-            var answer = '';
+        function solution(answers) {
+            var answer = [];
+            var result = [];
+            var a1 = [], a2 = [], a3 = [];
 
-            for(var i = 0; i < participant.length; i++){
-
-                if(completion.indexOf(participant[i]) === -1){
-                    answer = participant[i];
-                    break;
-                }
-
-                else{
-                    var result = completion.indexOf(participant[i]);
-                    completion.splice(result, 1);
-                }
+            if(answers.length === 0){
+                return answer;
             }
-            return answer;
-        }
 
-        console.log(solution(["leo", "kiki", "eden"], ["eden", "kiki"]));
+            else{
+                var a1l = parseInt(answers.length / 5) + 1;
+                var a2l = parseInt(answers.length / 8) + 1;
+                var a3l = parseInt(answers.length / 10) + 1;
+
+                var a1c = 0, a2c = 0, a3c = 0;
+
+                for(var i = 0; i < a1l; i++){
+                    a1.push(1, 2, 3, 4, 5);
+                }
+                
+                for(var i = 0; i < a2l; i++){
+                    a2.push(2, 1, 2, 3, 2, 4, 2, 5);
+                }
+
+                for(var i = 0; i < a3l; i++){
+                    a3.push(3, 3, 1, 1, 2, 2, 4, 4, 5, 5);
+                }
+
+                for(var i = 0; i < answers.length; i++){
+                    if(a1[i] === answers[i]){a1c++;} 
+                    if(a2[i] === answers[i]){a2c++;} 
+                    if(a3[i] === answers[i]){a3c++;} 
+                }
+
+                result.push(a1c, a2c, a3c);
+                if(a1c > a2c && a1c > a3c){answer.push(1);}
+                if(a1c === a2c && a1c > a3c){answer.push(1, 2);}
+                if(a1c === a3c && a1c > a2c){answer.push(1, 3);}
+                if(a1c === a2c && a2c === a3c){answer.push(1, 2, 3);}
+
+                if(a2c > a1c && a2c > a3c){answer.push(2);}
+                if(a3c > a1c && a3c > a2c){answer.push(3);}
+                
+
+                return answer;
+            }
+            }
+            
+
+        console.log(solution([1,2,3,4,5]));
     </script>
 </body>
 </html>
