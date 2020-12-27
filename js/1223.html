@@ -1,0 +1,33 @@
+<html>
+<head></head>
+<body>
+    <script>
+        function solution(n, lost, reserve) {
+            var answer = 0;
+            var newArr = lost.concat(reserve);
+            
+            newArr.sort((a,b) => (a-b));
+
+            console.log(newArr);
+
+            for(var i = 0; i < newArr.length; i++){
+                if(lost.indexOf(newArr[i]) !== -1){
+                    if( 0 < i < newArr.length){
+                        if((newArr[i - 1] + 1) === newArr[i] || (newArr[i + 1] - 1) === newArr[i]){
+                            answer++;
+                        }
+                    }
+                }
+            }  
+            answer += n - newArr.length;
+            answer += reserve.length; 
+
+            if(lost.length > reserve.length) ;
+
+            return answer;
+        }
+
+        console.log(solution(5, [2, 4], [3]));
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+<head></head>
+<body>
+    <script>
+        function solution(n) {
+            var answer = 0;
+            var arr = [];
+
+            //3진수로 만들기
+            while(n > 2){
+                arr.push(n % 3);
+                // console.log(arr);
+                n = parseInt(n / 3);
+            }
+            arr.push(n);
+            // console.log(arr);
+
+            // var newArr = [];
+            // //10진법으로 바꾸기 
+            // for(var i = 0; i < arr.length; i++){
+            //     var num = 1;
+            //     for(var j = 0; j < (arr.length - i - 1); j++){
+            //         num = 3 * num;
+            //         console.log(num);
+            //     }
+            //     newArr.push(num * arr[i]);
+            //     num = 1;
+            // }
+
+            // for(var i = 0; i < newArr.length; i++){
+            //     answer += newArr[i];
+            // }
+            
+            var newArr = arr.map((value, index) => (value * 3 ** (arr.length - index - 1)));
+            answer = newArr.reduce((r,a) => r+a);
+            // answer = arr.map((value, index) => value * 3 ** (arr.lenght - index - 1)).reduce((r, a) => r + a);
+
+            return answer;
+        }
+
+        console.log(solution(900));
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head></head>
+<body>
+    <script>
+        function solution(a, b) {
+            var answer = '';
+
+            var date = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+            var month = [[31, 5], [29, 1], [31, 2], [30, 5], [31, 0], [30, 3], [31, 5], [30, 1], [31, 4], [30, 6], [31, 2], [30, 4]];
+
+            var real = month[a - 1];
+            b = b + real[1];
+            b = b % 7;
+
+            if(b === 0){
+                answer = 'SAT';
+            }
+            else{
+                answer = date[b - 1];
+            }
+            
+
+            return answer;
+        }
+
+        console.log(solution(5, 24));
+    </script>
+</body>
+</html>

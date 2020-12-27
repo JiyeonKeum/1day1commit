@@ -1,0 +1,29 @@
+<html>
+<head></head>
+<body>
+    <script>
+        const info = {
+                name: 'jiyeon'
+            }
+
+        const bruce = {
+            name: 'Brouce'
+        };
+
+        const madeline = {
+            name: 'Madeline'
+        };
+
+        function greet(){
+            const info = {
+                name: 'jiyeon'
+            }
+            console.log(this.name);
+        }
+
+        greet();
+        greet.call(bruce);
+        greet.call(madeline);
+    </script>
+</body>
+</html>
