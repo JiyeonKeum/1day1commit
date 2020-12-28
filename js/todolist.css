@@ -1,0 +1,149 @@
+@media screen and (max-width: 700px) {
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    #inner{
+        display: none;
+    }
+
+    #mobileInner{
+        width: 500px;
+        margin: 20px auto;
+        padding: 50px;
+        text-align: center;
+        color:  rgb(32, 201, 151);
+        background: rgb(134, 142, 150);
+    }
+
+    #mobileAlert{
+        font-size: 36px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width: 701px) {
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    #mobileInner{
+        display: none;
+    }
+    #root{
+        background: lightgray;
+    }
+    #inner{
+        width: 900px;
+        margin: 0 auto;
+        background: white;
+        padding: 50px 50px 20px 50px;
+        margin-top: 50px;
+        border-radius: 20px;
+    }
+
+    #container{
+        display: flex;
+        margin-top: 40px;
+        color: rgb(32, 201, 151);
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    #date{
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    #yoil{
+        font-size: 21px;
+        margin-top: 5px;
+        color: rgb(134, 142, 150);
+    }
+
+    #head{
+        margin-right: 10px;
+    }
+    #count{
+        margin-right: 10px;
+    }
+
+    #outContainer{
+        border-top: 1px solid rgb(134, 142, 150);
+        margin-top: 20px;
+        padding: 30px 0;
+    }
+
+    #input{
+        width: 400px;
+        height: 50px;
+        border: 1px solid rgb(134, 142, 150);
+        padding: 0 10px;
+        font-size: 18px;
+        line-height: 50px;
+    }
+
+    #listContainer{
+        margin-top: 20px;
+    }
+    .list{
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .checkBtn{
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        border: 1px solid rgb(134, 142, 150);
+        cursor: pointer;
+        margin-right: 20px;
+        width: fit-content;
+        padding: 16px;
+        position: relative;
+        background: white;
+    }
+    .checkIcon{
+        background-image: url(./checkIcon.png);
+        background-size: 70%;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 32px;
+        height: 32px;
+        /* display: none; */
+        position: absolute;
+        top: 0;
+        left: 0;
+
+    }
+    .listName{
+        font-size: 21px;
+        flex-grow: 1;
+    }
+    .deleteBtn{
+        display: none;
+        border: none;
+        cursor: pointer;
+        color:  rgb(134, 142, 150);
+        font-size: 15px;
+        line-height: 32px;
+        width: fit-content;
+        background: white;
+    }
+    .list:hover .deleteBtn{
+        display: block;
+    }
+
+    .checkBtn:focus{
+        outline: none;
+    }
+    .checkBtn:hover + .listName{
+        color: rgb(134, 142, 150);
+    }
+    .checkBtn:hover .checkIcon{
+        display: block;
+    }
+}

@@ -1,0 +1,119 @@
+<html>
+<head>
+    <link rel="stylesheet" href="./todolist.css" />
+</head>
+<body id='root'>
+    <div id='window'>
+        <div id="mobileInner">
+            <div id='mobileAlert'>지원하지 않는 모드입니다.</div>
+        </div>
+        <div id="inner">
+            <div id="date"></div>
+            <div id="yoil"></div>
+            <div id='container'>
+                <div id="head">할 일</div>
+                <div id='count'>0</div>
+                <div id='tail'>개 남음</div>
+            </div>
+            <div id="outContainer">
+                <input id="input" placeholder="할 일 입력 후 Enter를 누르세요"/>
+                <div id="listContainer"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let date = one('date');
+        let yoil = one('yoil');
+        let add = one('add');
+        let list = one('listContainer');
+        let input = one('input');
+        let _list = [];
+        let newList = [];
+        let count = one('count');
+
+        function one(element){
+            return document.getElementById(element);
+        }
+
+        let _date = new Date();
+        let year = _date.getFullYear();
+        let month = _date.getMonth() + 1;
+        let day = _date.getDate();
+        date.innerHTML = `${year}년 ${month}월 ${day}일`;
+
+        let _yoil = _date.getDay();
+
+        switch(_yoil){
+            case 0:
+                yoil.innerHTML = '일요일';
+                break;
+            case 1:
+                yoil.innerHTML = '월요일';
+                break;
+            case 2:
+                yoil.innerHTML = '화요일';
+                break;
+            case 3:
+                yoil.innerHTML = '수요일';
+                break;
+            case 4:
+                yoil.innerHTML = '목요일';
+                break;
+            case 5:
+                yoil.innerHTML = '금요일';
+                break;
+            case 6:
+                yoil.innerHTML = '토요일';
+                break;
+            default:
+                yoil.innerHTML = '잘못된 값';
+                break;
+        }
+
+        //리스트 추가
+        const onAddList = () => {
+            _list.push(input.value);
+            // localStorage.setItem(toString(_list));
+            print();
+            
+            input.value = null;
+        }
+
+        //배열 프린트 함수
+        const print = () => {
+            newList = [];
+            _list.forEach((value, idx) => (
+                newList += `
+                    <div class='list'>
+                        <button class='checkBtn' onClick='onCheck(${idx})'><div class='checkIcon'></div></button>
+                        <li class='listName'>${value}</li>
+                        <button class='deleteBtn' onClick='onDelete(${idx})'>delete</button>
+                    </div>
+                    `
+            ));
+            list.innerHTML = newList;
+            count.innerHTML = _list.length;
+        }
+
+        const onCheck = (idx) => {
+            console.log(idx);
+            console.log('onCheck');
+            //회색처리 
+        }
+
+        const onDelete = (idx) => {
+            var num = _list.splice(idx, 1);
+            print();
+        }
+        
+        //input 입력 input값 빈 값에 대한 예외 처리 필요
+        input.addEventListener('keydown', function(e){
+            if(e.keyCode === 13){
+                onAddList();
+            }
+        }); 
+
+    </script>
+</body>
+
+</html>
